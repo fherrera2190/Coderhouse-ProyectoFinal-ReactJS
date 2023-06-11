@@ -1,0 +1,28 @@
+import '../../css/NavBar.css'
+
+function NavBar() {
+    return (
+        <>
+            <nav className="container navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="#"><img src={"https://medias.musimundo.com/medias/M-roja-03.png?context=bWFzdGVyfHJvb3R8NDA2M3xpbWFnZS9wbmd8aGQwL2hlMC85ODQ1NzYyMjkzNzkwLnBuZ3w3NDNmYjhlZjA1MjE5OTUwZjM2ZDBhNDZmYTlmMmMyMjI0MGM5NmI1Zjg0MmI0MGQ2Y2VjNDVjZTdmMGM0YjM4"} className="logo" alt="" /></a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Features</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </>
+    );
+}
+
+export default NavBar;
