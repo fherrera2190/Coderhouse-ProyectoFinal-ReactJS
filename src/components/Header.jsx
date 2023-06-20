@@ -3,6 +3,8 @@ import Category from "./Category/Category";
 
 function Header() {
   return (
+
+    
     <header>
       <div>
         <div className="container d-flex">

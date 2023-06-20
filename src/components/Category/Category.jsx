@@ -12,23 +12,23 @@ function Categorias() {
         </div>
         <div className="d-flex bg-danger flex-grow-1">
           <div className="btn-category">
-            <button type="button" className="btn btn-danger">
+            <a href="#" className="btn btn-danger">
               <img src="/src/assets/cat98-notebooks.webp" alt="Notebook" />
               <p>Notebook</p>
-            </button>
+            </a>
           </div>
 
           <div className="btn-category">
-            <button type="button" className="btn btn-danger">
+            <a href="#" className="btn btn-danger">
               <img src="/src/assets/cat82-celulares.webp" alt="Celulares" />
               <p>Celulares</p>
-            </button>
+            </a>
           </div>
           <div className="btn-category">
-            <button type="button" className="btn btn-danger ">
+            <a href="#" className="btn btn-danger ">
               <img src="/src/assets/cat99-tablets.webp" alt="Tablets" />
               <p>Tablets</p>
-            </button>
+            </a>
           </div>
         </div>
       </div>

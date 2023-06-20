@@ -1,4 +1,3 @@
-import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./ItemListContainer/ItemListContainer";
 
 function Main() {
@@ -7,7 +6,7 @@ function Main() {
       <div className="container">
         <div className="d-flex justify-content-center ">
           <ItemListContainer greeting={"Bienvenidos"} />
-          <ItemDetailContainer />
+
         </div>
       </div>
     </main>
