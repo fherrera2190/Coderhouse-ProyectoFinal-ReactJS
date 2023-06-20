@@ -1,11 +1,28 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 
-function ItemListContainer({Greeting: greeting}) {
+import { useEffect, useState } from "react";
+import { getProducts } from "../../data/asynMocks";
+import ItemList from "../ItemList/ItemList";
+
+function ItemListContainer({ greeting }) {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProducts()
+      .then((response) => {
+        setProducts(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <>
-    <h1>{greeting}</h1>
+      <div>
+        <ItemList products={products} />
+      </div>
     </>
-  )
+  );
 }
 
 export default ItemListContainer;
