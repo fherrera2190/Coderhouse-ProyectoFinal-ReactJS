@@ -6,25 +6,20 @@ import ItemCount from "../ItemCount/ItemCount";
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
   return (
     <>
-      <article className="CardItem">
-        <header className="Header">
-          <h2 className="ItemHeader">{name}</h2>
-        </header>
-        <picture>
-          <img src={img} alt={name} className="ItemImg" />
-        </picture>
-        <section>
-          <p className="Info">Categoria:{category}</p>
-          <p className="Info">Description:{description}</p>
-          <p className="Info">Precio:${price}</p>
-        </section>
-        <footer className="ItemFooter">
+      <article className="card">
+        <img src={img} className="card-img-top h-25 w-25 m-auto " alt={name} />
+        <div className="text-center">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">Categoria:{category}</p>
+          <p className="card-text">Description :{description}</p>
+          <p className="card-text">Precio:${price}</p>
+
           <ItemCount
             initial={1}
             stock={stock}
             onAdd={(quatity) => console.log("Cantidad Agregada")}
           />
-        </footer>
+        </div>
       </article>
     </>
   );

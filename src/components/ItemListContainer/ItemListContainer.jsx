@@ -2,23 +2,29 @@
 /* eslint-disable no-unused-vars */
 
 import { useEffect, useState } from "react";
-import { getProducts } from "../../data/asynMocks";
+import { getProducts, getProductsByCategory } from "../../data/asynMocks";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer({ greeting }) {
   const [products, setProducts] = useState([]);
+
+  const { categoryId } = useParams();
+
   useEffect(() => {
-    getProducts()
+    const asyncFunc = categoryId ? getProductsByCategory : getProducts;
+    asyncFunc(categoryId)
       .then((response) => {
         setProducts(response);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+    console.log(asyncFunc);
+  }, [categoryId]);
   return (
     <>
-      <div>
+      <div className="container">
         <ItemList products={products} />
       </div>
     </>

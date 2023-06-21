@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
@@ -6,7 +7,7 @@ function NavBar() {
     <>
       <nav className="navbar navbar-expand-lg nav-color">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             <img
               src={
                 "https://medias.musimundo.com/medias/M-roja-03.png?context=bWFzdGVyfHJvb3R8NDA2M3xpbWFnZS9wbmd8aGQwL2hlMC85ODQ1NzYyMjkzNzkwLnBuZ3w3NDNmYjhlZjA1MjE5OTUwZjM2ZDBhNDZmYTlmMmMyMjI0MGM5NmI1Zjg0MmI0MGQ2Y2VjNDVjZTdmMGM0YjM4"
@@ -14,7 +15,7 @@ function NavBar() {
               className="logo"
               alt=""
             />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -41,8 +42,8 @@ function NavBar() {
             </ul>
           </div>
           <div className="d-flex justify-content-end">
-          <CartWidget />
-        </div>
+            <CartWidget />
+          </div>
         </div>
       </nav>
     </>

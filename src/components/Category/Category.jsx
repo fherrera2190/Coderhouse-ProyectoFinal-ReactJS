@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Category.css";
 function Categorias() {
   return (
@@ -12,23 +13,53 @@ function Categorias() {
         </div>
         <div className="d-flex bg-danger flex-grow-1">
           <div className="btn-category">
-            <a href="#" className="btn btn-danger">
-              <img src="/src/assets/cat98-notebooks.webp" alt="Notebook" />
+            <NavLink
+              to={"/category/notebook"}
+              className={({ isActive }) =>
+                isActive
+                  ? "ActiveOption btn btn-danger"
+                  : "Option btn btn-danger"
+              }
+            >
+              <img
+                src="https://medias.musimundo.com/medias/cat98-notebooks.png?context=bWFzdGVyfHJvb3R8MTE2M3xpbWFnZS9wbmd8aGEyL2gwNC85Mzg2MzQ1NjkzMjE0LnBuZ3xlMmI1NzQ5MjQyZmQ3NzExNmE2ZDU0YjczODk4ZGRhMmEzNzhkY2I3NGViYTI3ZWJlZGIyY2M0NTY5OTg4NGE2"
+                alt="Notebook"
+              />
               <p>Notebook</p>
-            </a>
+            </NavLink>
           </div>
 
           <div className="btn-category">
-            <a href="#" className="btn btn-danger">
-              <img src="/src/assets/cat82-celulares.webp" alt="Celulares" />
+            <NavLink
+              to={"/category/celular"}
+              className={({ isActive }) =>
+                isActive
+                  ? "ActiveOption btn btn-danger"
+                  : "Option btn btn-danger"
+              }
+            >
+              <img
+                src="https://medias.musimundo.com/medias/cat82-celulares.png?context=bWFzdGVyfHJvb3R8MTI2MnxpbWFnZS9wbmd8aGE4L2hhNi8xMDI1NjQwMDMxODQ5NC9jYXQ4Ml9jZWx1bGFyZXMucG5nfDljYTNiYzFkYTIzNTY4NDY1OTE3ZDM5NzkwNDNkZmU4YTg4MDU0Y2U0ZDg5NmU5Mjk5NGVjN2NjNjZlZDEzYWM"
+                alt="Celulares"
+              />
               <p>Celulares</p>
-            </a>
+            </NavLink>
           </div>
           <div className="btn-category">
-            <a href="#" className="btn btn-danger ">
-              <img src="/src/assets/cat99-tablets.webp" alt="Tablets" />
+            <NavLink
+              to={"/category/tablet"}
+              className={({ isActive }) =>
+                isActive
+                  ? "ActiveOption btn btn-danger"
+                  : "Option btn btn-danger"
+              }
+            >
+              <img
+                src="https://medias.musimundo.com/medias/cat99-tablets.png?context=bWFzdGVyfHJvb3R8MTEzOHxpbWFnZS9wbmd8aGVlL2g4Ny85Mzg2MzQ1NzU4NzUwLnBuZ3xhYTg4ZmUxZjI4MWM1NTc0MWI0NGY5MDkyYTFmYTBjNzA2Mzc4YjA2ZWI4MGI2NWRlMGM2YmY0NmM3NzlhZWI4"
+                alt="Tablets"
+              />
               <p>Tablets</p>
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

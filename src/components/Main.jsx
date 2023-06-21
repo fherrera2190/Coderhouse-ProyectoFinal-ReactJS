@@ -6,7 +6,6 @@ function Main() {
       <div className="container">
         <div className="d-flex justify-content-center ">
           <ItemListContainer greeting={"Bienvenidos"} />
-
         </div>
       </div>
     </main>
