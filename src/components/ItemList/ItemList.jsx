@@ -7,7 +7,7 @@ import Item from "../Item/Item";
 const ItemList = ({ products }) => {
   return (
     <>
-      <div className="ListGroup row row-cols-lg-3">
+      <div className="mt-5 row row-cols-lg-3">
         {products.map((prod) => (
           <Item key={prod.id} {...prod} />
         ))}
