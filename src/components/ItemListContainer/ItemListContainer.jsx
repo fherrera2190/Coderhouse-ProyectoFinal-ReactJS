@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 function ItemListContainer({ greeting }) {
   const [products, setProducts] = useState([]);
-
   const { categoryId } = useParams();
 
   useEffect(() => {
@@ -20,7 +19,6 @@ function ItemListContainer({ greeting }) {
       .catch((error) => {
         console.error(error);
       });
-    console.log(asyncFunc);
   }, [categoryId]);
   return (
     <>

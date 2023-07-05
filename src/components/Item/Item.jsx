@@ -11,7 +11,7 @@ const Item = ({ id, name, img, price, stock }) => {
           <div className="card-body text-center">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">Precio:${price}</p>
-            <p className="card-text">Stock Disponible:${stock}</p>
+            <p className="card-text">Stock Disponible: {stock}</p>
             <footer className="ItemFooter">
               <Link to={`/item/${id}`} className="Option btn btn-info text-white">
                 Ver detalle
