@@ -20,7 +20,6 @@ const Item = ({ id, name, img, price, stock }) => {
           </div>
         </div>
       </div >
-
     </>
   );
 };

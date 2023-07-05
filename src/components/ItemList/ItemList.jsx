@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 
 import Item from "../Item/Item";
 
-/* eslint-disable no-unused-vars */
 
 const ItemList = ({ products }) => {
   return (
@@ -11,7 +11,6 @@ const ItemList = ({ products }) => {
         {products.map((prod) => (
           <Item key={prod.id} {...prod} />
         ))}
-        ;
       </div>
     </>
   );
