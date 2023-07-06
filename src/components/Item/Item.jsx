@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-/* eslint-disable react/prop-types */
 const Item = ({ id, name, img, price, stock }) => {
   return (
     <>

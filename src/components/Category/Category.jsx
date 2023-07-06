@@ -12,6 +12,7 @@ function Categorias() {
           </a>
         </div>
         <div className="d-flex bg-danger flex-grow-1">
+          {/* Categoria Notebook */}
           <div className="btn-category">
             <NavLink
               to={"/category/notebook"}
@@ -28,7 +29,7 @@ function Categorias() {
               <p>Notebook</p>
             </NavLink>
           </div>
-
+          {/* Categoria Celulares */}
           <div className="btn-category">
             <NavLink
               to={"/category/celular"}
@@ -45,6 +46,7 @@ function Categorias() {
               <p>Celulares</p>
             </NavLink>
           </div>
+          {/* Categoria Tablet */}
           <div className="btn-category">
             <NavLink
               to={"/category/tablet"}

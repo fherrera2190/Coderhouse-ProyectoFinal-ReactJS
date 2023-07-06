@@ -6,11 +6,13 @@ import React, { useState } from "react";
 
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
+  // Incrementa en una unidad
   const increment = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
     }
   };
+  // Decrementa en una unidad
   const decrement = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
