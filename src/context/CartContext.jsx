@@ -32,9 +32,11 @@ export const CartProvider = ({ children }) => {
         setTotalQuantity(0);
         console.log('Se borro el carrito');
     };
+    
     const isInCart = (itemId) => {
         return cart.some(prod => prod.id === itemId);
     };
+
     return (
         <CartContext.Provider value={{ cart, totalQuantity, total, addItem, removeItem, clearCart, setTotalQuantity }}>
             {children}

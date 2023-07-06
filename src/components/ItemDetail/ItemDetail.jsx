@@ -18,14 +18,16 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
       id, name, price
     };
     addItem(item, quantity)
-    
+
   }
 
   return (
     <>
       <div className="d-flex justify-content-center my-5">
         <article className="card m-auto" style={{ width: "18rem" }}>
-          <img src={img} className="card-img-top" alt={name} />
+          <div className="m-auto p-4" >
+            <img src={img} className="card-img-top" style={{ height: "180px", width: "180px" }} alt={name} />
+          </div>
           <div className="card-body text-center">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">Categoria:{category}</p>

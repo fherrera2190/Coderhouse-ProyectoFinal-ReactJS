@@ -9,7 +9,6 @@ function CartItem({ id, name, price, quantity }) {
                 <p>Subtotal: ${price * quantity}</p>
                 <button>X</button>
             </div>
-
         </div>
     )
 }
