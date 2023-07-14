@@ -51,7 +51,7 @@ const products = [
     category: "notebook",
     img: "https://http2.mlstatic.com/D_NQ_NP_946410-MLA48352501573_112021-O.webp",
     stock: 25,
-    description: "de Aple MacBook Pro...",
+    description: "Descripcion de Aple MacBook Pro...",
   },
   {
     id: "7",
