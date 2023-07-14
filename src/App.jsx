@@ -14,6 +14,7 @@ import Checkout from "./components/Checkout/Checkout";
 
 
 function App() {
+  console.log(process.env.REACT_APP_API_KEY)
   return (
     <>
       <BrowserRouter>
