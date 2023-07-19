@@ -5,34 +5,45 @@ export const CartContext = createContext({ cart: [] });
 export const CartProvider = ({ children }) => {
     const [totalQuantity, setTotalQuantity] = useState(0);
     const [cart, setCart] = useState([]);
-    const [total, setTotal] = useState(0);
 
     // Agrega un item al carrito
     const addItem = (item, quantity) => {
         if (!isInCart(item.id)) {
             setCart(prev => [...prev, { ...item, quantity }]);
             setTotalQuantity(totalQuantity + quantity);
-            console.log('Se agrego exitosamente el producto')
         } else {
-            console.error('El producto ya se encuentra en el carrito');
+            modifyProductQuantity(item, quantity);
         }
     }
-    // Actualiza el monto total del carrito cuando cambia totalQuatity
-    useEffect(() => {
-        setTotal(cart.reduce((total, { price, quantity }) => {
+    // Aumentar cantidad de producto
+    const modifyProductQuantity = (item, quantity) => {
+        let itemQuantity = 0;
+        let itemsCart = cart.filter(itemCart => {
+            if (itemCart.id === item.id) {
+                itemQuantity = itemCart.quantity;
+            } else {
+                return itemCart;
+            }
+        });
+        setCart([...itemsCart, { ...item, "quantity": quantity + itemQuantity }])
+        setTotalQuantity(totalQuantity + quantity);
+    }
+
+    const getCartTotal = () => {
+       return cart.reduce((total, { price, quantity }) => {
             return (total + (price * quantity));
-        }, 0));
-    }, [totalQuantity]);
+        }, 0)
+    }
     // Elimina un producto dado un ID
-    const removeItem = (itemId) => {
+    const removeItem = (itemId, quantity) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId);
         setCart(cartUpdated);
+        setTotalQuantity(totalQuantity - quantity);
     };
     // Elimina todos los productos del carrito
     const clearCart = () => {
         setCart([]);
         setTotalQuantity(0);
-        console.log('Se borro el carrito');
     };
     // Dado un ID consulta si un producto se encuentra en el carrito
     const isInCart = (itemId) => {
@@ -40,7 +51,7 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, totalQuantity, total, addItem, removeItem, clearCart, setTotalQuantity }}>
+        <CartContext.Provider value={{ cart, totalQuantity, addItem, removeItem, clearCart, setTotalQuantity, getCartTotal }}>
             {children}
         </CartContext.Provider>
     );

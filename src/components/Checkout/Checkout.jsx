@@ -1,14 +1,13 @@
-import { getDocs, collection, query, where, Timestamp, writeBatch, documentId } from "firebase/firestore";
-import { db } from "../service/firebase/firebaseConfig";
+import { addDoc, getDocs, collection, query, where, Timestamp, writeBatch, documentId } from "firebase/firestore";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
-
+import { db } from "../../service/firebase/firebaseConfig";
+import './Checkout.css'
 function Checkout() {
     const [loading, setLoading] = useState(false);
     const [orderId, setOrderId] = useState('');
-
-    const { cart, total, clearCart } = useContext(CartContext);
+    const { cart, getCartTotal, clearCart } = useContext(CartContext);
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true);
         try {
@@ -17,13 +16,13 @@ function Checkout() {
                     name, phone, email
                 },
                 items: cart,
-                total: total,
+                total: getCartTotal(),
                 date: Timestamp.fromDate(new Date())
             }
             const batch = writeBatch(db);
             const outOfStock = [];
             const ids = cart.map(prod => prod.id);
-            const productsRef = collection(db, 'products');
+            const productsRef = collection(db, 'productos');
             const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)));
             const { docs } = productsAddedFromFirestore
             docs.forEach(doc => {
@@ -53,14 +52,34 @@ function Checkout() {
         }
     }
     if (loading) {
-        return <h1>Se esta generando su order...</h1>
+        return (
+            <div className="container">
+                <div className="text-center">
+                    <div className="spinner-border m-5 p-5" role="status">
+                        <span className="visually-hidden">Se esta generando su order...</span>
+                    </div>
+                    <h1>Se esta generando su order...</h1>
+                </div>
+            </div>
+        );
+
     }
     if (orderId) {
-        return <h1>El id de su orden es: {orderId}</h1>
+        return (
+            <div className="d-flex justify-content-center m-5">
+                <div className="card col-lg-6 d-flex justify-content-center">
+                    <div className="card-header">
+                        <h1 className="text-center">GRACIAS POR TU COMPRA</h1>
+                    </div>
+                    <div className="text-center card-body bg-primary-subtle  ">
+                        <p className="fs-3 text-primary">Tu numero de pedido es:{orderId}</p>
+                    </div>
+                </div>
+            </div>
+        );
     }
     return (
         <div>
-            <h1>Checkout</h1>
             <CheckoutForm onConfirm={createOrder} />
         </div>
     );

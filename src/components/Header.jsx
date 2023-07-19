@@ -1,13 +1,11 @@
 import NavBar from "./NavBar/NavBar";
 import Category from "./Category/Category";
-
+import './header.css';
 function Header() {
   return (
-
-    
     <header>
       <div>
-        <div className="container d-flex">
+        <div className="container d-flex header-hide">
           <div className="d-flex align-items-center w-50">
             <p>
               Estoy navegando desde:<span className="text-danger"> Bs As</span>

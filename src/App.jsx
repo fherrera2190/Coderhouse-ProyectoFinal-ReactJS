@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import "./css/app.css";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
@@ -14,7 +15,6 @@ import Checkout from "./components/Checkout/Checkout";
 
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY)
   return (
     <>
       <BrowserRouter>

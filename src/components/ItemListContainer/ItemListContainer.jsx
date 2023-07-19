@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import { db } from "../service/firebase/firebaseConfig";
+import { db } from "../../service/firebase/firebaseConfig";
+
 
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
-
-  console.log(categoryId)
+  
   useEffect(() => {
     setLoading(true);
     const collectionRef = categoryId
@@ -31,7 +31,7 @@ function ItemListContainer() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [categoryId]);
   return (
     <>
       <div className="container">

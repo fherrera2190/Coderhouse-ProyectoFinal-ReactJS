@@ -9,7 +9,7 @@ import { CartContext } from "../../context/CartContext.jsx";
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
   const [quantityAdded, setQuantityAdded] = useState(0);
-  const { addItem, totalQuantity, setTotalQuantity } = useContext(CartContext);
+  const { addItem} = useContext(CartContext);
 
 
   const hadleOnAdd = (quantity) => {

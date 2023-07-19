@@ -1,0 +1,9 @@
+.header-hide {
+    display: none !important;
+}
+
+@media(min-width:769px) {
+    .header-hide {
+        display: flex !important;
+    }
+}

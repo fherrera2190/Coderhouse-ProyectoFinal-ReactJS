@@ -1,4 +1,11 @@
-
 .btn-category{
     border-left: 1px solid white;
+}
+.category{
+    display:none!important;
+}
+@media(min-width:576px){
+    .category{
+        display:flex!important;
+    }
 }

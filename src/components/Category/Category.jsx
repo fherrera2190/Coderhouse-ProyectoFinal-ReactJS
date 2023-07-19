@@ -3,19 +3,17 @@ import "./Category.css";
 function Categorias() {
   return (
     <>
-      <div className="container d-flex w-100 align-items-center">
-        <div className="flex-grow-0">
-          <a className="nav-link" href="#" title="Comprar por Categorías">
-            <span>
-              Comprar por <br /> Categorías
-            </span>
+      <div className="container d-flex w-100 align-items-center category">
+        <div className="">
+          <a className="nav-link m-3" href="#" title="Comprar por Categorías">
+              Comprar por Categorías
           </a>
         </div>
         <div className="d-flex bg-danger flex-grow-1">
           {/* Categoria Notebook */}
           <div className="btn-category">
             <NavLink
-              to={"/category/notebook"}
+              to={`/category/notebook`}
               className={({ isActive }) =>
                 isActive
                   ? "ActiveOption btn btn-danger"

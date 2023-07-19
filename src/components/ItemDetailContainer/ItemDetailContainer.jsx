@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { getProductById } from "../../data/asynMocks";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
-import { db } from "../service/firebase/firebaseConfig";
+import { db } from "../../service/firebase/firebaseConfig";
+
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
   }, [itemId]);
   return (
     <>
-      <div className="">
+      <div>
         <ItemDetail {...product} />
       </div>
     </>
