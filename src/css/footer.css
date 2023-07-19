@@ -1,0 +1,21 @@
+.footer-separador {
+    background-color: #fc4434;
+    margin: auto;
+}
+
+.nav-footer__listItems {
+    list-style: none;
+    width: 100%;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item img {
+    width: max-content;
+}
+
+.bg-category {
+    background-color: #fc4434;
+}

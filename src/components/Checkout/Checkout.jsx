@@ -73,6 +73,7 @@ function Checkout() {
                     </div>
                     <div className="text-center card-body bg-primary-subtle  ">
                         <p className="fs-3 text-primary">Tu numero de pedido es:{orderId}</p>
+                        <div className="face"><i className="bi bi-emoji-smile" ></i></div>
                     </div>
                 </div>
             </div>

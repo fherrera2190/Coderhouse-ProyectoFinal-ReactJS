@@ -1,6 +1,6 @@
 import NavBar from "./NavBar/NavBar";
 import Category from "./Category/Category";
-import './header.css';
+import '../css/header.css';
 function Header() {
   return (
     <header>
@@ -12,7 +12,7 @@ function Header() {
             </p>
             <button className="btn border mx-3">Confirmar</button>
           </div>
-          <div className="d-flex w-50 justify-content-end align-nav-items-center">
+          <div className="d-flex w-50 justify-content-end align-items-center">
             <div>
               <a className="nav-link" href="#">
                 Sucursales

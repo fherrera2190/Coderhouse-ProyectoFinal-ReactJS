@@ -6,18 +6,18 @@ function Categorias() {
       <div className="container d-flex w-100 align-items-center category">
         <div className="">
           <a className="nav-link m-3" href="#" title="Comprar por Categorías">
-              Comprar por Categorías
+            Comprar por Categorías
           </a>
         </div>
-        <div className="d-flex bg-danger flex-grow-1">
+        <div className="d-flex bg-category flex-grow-1">
           {/* Categoria Notebook */}
           <div className="btn-category">
             <NavLink
               to={`/category/notebook`}
               className={({ isActive }) =>
                 isActive
-                  ? "ActiveOption btn btn-danger"
-                  : "Option btn btn-danger"
+                  ? "ActiveOption btn bg-category text-white"
+                  : "Option btn bg-category text-white"
               }
             >
               <img
@@ -33,8 +33,8 @@ function Categorias() {
               to={"/category/celular"}
               className={({ isActive }) =>
                 isActive
-                  ? "ActiveOption btn btn-danger"
-                  : "Option btn btn-danger"
+                  ? "ActiveOption btn bg-category text-white"
+                  : "Option btn bg-category text-white"
               }
             >
               <img
@@ -50,8 +50,8 @@ function Categorias() {
               to={"/category/tablet"}
               className={({ isActive }) =>
                 isActive
-                  ? "ActiveOption btn btn-danger"
-                  : "Option btn btn-danger"
+                  ? "ActiveOption btn bg-category text-white"
+                  : "Option btn bg-category text-white"
               }
             >
               <img

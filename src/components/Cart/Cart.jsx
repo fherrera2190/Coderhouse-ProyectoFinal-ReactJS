@@ -11,7 +11,7 @@ function Cart() {
         return (
             <div className='container d-flex justify-content-center'>
                 <div className='col-lg-6 d-flex flex-column mt-5 cart__container'>
-                    <h1 className='text-center'>No hay productos en tu caro <i class="bi bi-emoji-frown"></i></h1>
+                    <h1 className='text-center'>No hay productos en tu carro <i class="bi bi-emoji-frown"></i></h1>
                     <div className='text-center'><Link to='/' className='btn btn-info text-white m-3'>Productos</Link></div>
                 </div>
 
