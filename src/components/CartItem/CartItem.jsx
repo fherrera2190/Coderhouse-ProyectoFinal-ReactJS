@@ -1,9 +1,8 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-function CartItem({ id, name, img , price, quantity}) {
+function CartItem({ id, name, price, quantity }) {
     const { removeItem } = useContext(CartContext);
-    console.log(img)
     return (
         < >
             <div className="row row-cols-md-5 d-flex align-items-center justify-content-center">

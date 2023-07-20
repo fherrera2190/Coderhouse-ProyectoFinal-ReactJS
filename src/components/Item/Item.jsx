@@ -8,17 +8,19 @@ const Item = ({ id, name, img, price, stock }) => {
     if (stock > 0) {
       return (
         <>
-          <Link to={`/item/${id}`} className="Option btn btn-info text-white">
-            Ver Más
-          </Link>
+          <div className="d-flex justify-content-center">
+            <Link to={`/item/${id}`} className="w-50 btn btn-info text-white p-2">
+              Ver Más
+            </Link>
+          </div>
         </>
 
       );
     }
     else {
       return (<>
-        <div className="btn bg-danger disabled">
-          <h4 className="text-white fs-6">No hay stock</h4>
+        <div className="d-flex justify-content-center">
+          <button className="btn text-white fs-6 bg-danger w-50 p-2">No hay stock</button>
         </div>
       </>
       );
@@ -29,17 +31,19 @@ const Item = ({ id, name, img, price, stock }) => {
     <>
       <div className="d-flex justify-content-center mt-4">
         <div className="card shadow" style={{ width: "18rem" }}>
-          <div className="m-auto p-4" style={{ height: "180px", width: "180px" }} >
-            <img src={img} className="card-img-top" alt={name} />
+          <div className="d-flex justify-content-center align-content-center mx-auto" style={{ height: "180px", width: "180px" }} >
+              <img className="object-fit-contain p-3" src={img}  alt={name} />
           </div>
           <div className="card-body text-center">
-            <h5 className="card-title" >{name}</h5>
-            <p className="card-text">Precio:${price}</p>
-            <p className="card-text">Stock Disponible: {stock}</p>
-            <footer className="ItemFooter">
-              {consultarStock()}
-            </footer>
+            <h5 className="card-title m-0" >{name}</h5>
+            <div className="card-text">
+              <p >Precio:${price}</p>
+              <p >Stock Disponible: {stock}</p>
+            </div>
           </div>
+          <footer className="card-footer align-self-center w-100">
+            {consultarStock()}
+          </footer>
         </div>
       </div >
     </>

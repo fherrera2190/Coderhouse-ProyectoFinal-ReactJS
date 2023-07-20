@@ -3,8 +3,8 @@ function Footer() {
   return (
     <footer className='mt-5'>
       <div className='footer-separador py-3 row row-cols-1 row-cols-md-3'>
-        <div className=''>
-          <p className='text-white fs-5 text-center'>
+        <div className='d-flex align-items-center justify-content-center'>
+          <p className='text-white fs-5'>
             ENTERATE DE LAS MEJORES OFERTAS
           </p>
         </div>

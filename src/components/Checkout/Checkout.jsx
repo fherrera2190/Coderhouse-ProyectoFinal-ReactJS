@@ -5,6 +5,7 @@ import { CartContext } from "../../context/CartContext";
 import { db } from "../../service/firebase/firebaseConfig";
 function Checkout() {
     const [loading, setLoading] = useState(false);
+    const [stockOk, setstockOk] = useState(false);
     const [orderId, setOrderId] = useState('');
     const { cart, getCartTotal, clearCart } = useContext(CartContext);
     const createOrder = async ({ name, phone, email }) => {
@@ -43,6 +44,7 @@ function Checkout() {
                 clearCart();
             } else {
                 console.error('Hay productos que esta fuera de stock');
+                setstockOk(true);
             }
         } catch (error) {
             console.error(error);
@@ -80,7 +82,10 @@ function Checkout() {
     }
     return (
         <div>
-            <CheckoutForm onConfirm={createOrder} />
+            {
+                stockOk ? <h1>Hay productos fuera de stock</h1>:<CheckoutForm onConfirm={createOrder} />
+
+            }
         </div>
     );
 };

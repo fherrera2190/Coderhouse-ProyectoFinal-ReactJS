@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const CartContext = createContext({ cart: [] });
 
@@ -36,8 +36,7 @@ export const CartProvider = ({ children }) => {
     }
     // Elimina un producto dado un ID
     const removeItem = (itemId, quantity) => {
-        const cartUpdated = cart.filter(prod => prod.id !== itemId);
-        setCart(cartUpdated);
+        setCart(cart.filter(prod => prod.id !== itemId));
         setTotalQuantity(totalQuantity - quantity);
     };
     // Elimina todos los productos del carrito
