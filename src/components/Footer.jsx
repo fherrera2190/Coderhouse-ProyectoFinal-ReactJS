@@ -3,7 +3,7 @@ import Login from './Login/Login';
 function Footer() {
   return (
     <footer className='mt-5'>
-      <Login></Login>
+      {/* <Login></Login> */}
       <div className='footer-separador py-3 row row-cols-1 row-cols-md-3'>
         <div className='d-flex align-items-center justify-content-center'>
           <p className='text-white fs-5'>
